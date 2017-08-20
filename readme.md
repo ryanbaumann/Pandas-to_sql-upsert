@@ -1,4 +1,5 @@
-#Pandas to-sql 'Upsert' : Why
+# Pandas to-sql 'Upsert' : Why
+
 Frequently in data analysis workflows, data is ingested from multiple sources into an application (python in this case), analzed in-memory using a library such as Pandas, Scipy, Numpy, or SAS, and then the results need to be written to a database.  If my workflow ingests data that is already in the database, I don't want to write the duplicate rows.
 
 The goal of this library is to extend the Python Pandas to_sql() function to be:
@@ -10,7 +11,7 @@ database
 
 3) Perform the data duplication check 'in-memory' 
 
-#Pandas to-sql 'Upsert' : Challenges
+# Pandas to-sql 'Upsert' : Challenges
 
 1) Each database type (and version) supports different syntax for creating 'insert if not exists in table' commands, commonly known as an 'upsert'
 
@@ -26,18 +27,18 @@ database
 
 4) Use python 'Threading' library to multiprocess the database write
 
-#Pre-Build Instructions
+# Pre-Build Instructions
 1) Install Python 2.7.x. Add both the root directory and the /Scripts directory to system PATH (tested on 2.7.11) https://www.python.org/downloads/release/python-2711/
 
 
-#Build Instructions
+# Build Instructions
 1) Git clone this repository
 
 2) Open a cmd window and CD to root directory of this repo.
 
 3) Run command "pip install -r requirements.txt".
 
-#Caveats & To Do's
+# Caveats & To Do's
 
 1) For concurrency, an "Upsert" (Update or Insert) function should still be performed.  If multiple workers can write to the same database table at the same time, the time between checking the database for duplicates and writing the new rows to the database can be significant.  This is a big to-do.
 
