@@ -1,7 +1,5 @@
 # Pandas to-sql 'Upsert' : Why
 
-Read more detail on the blog: https://www.ryanbaumann.com/blog/2016/4/30/python-pandas-tosql-only-insert-new-rows
-
 Frequently in data analysis workflows, data is ingested from multiple sources into an application (python in this case), analzed in-memory using a library such as Pandas, Scipy, Numpy, or SAS, and then the results need to be written to a database.  If my workflow ingests data that is already in the database, I don't want to write the duplicate rows.
 
 The goal of this library is to extend the Python Pandas to_sql() function to be:
